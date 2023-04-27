@@ -1,9 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 a {
@@ -13,4 +16,33 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+@layer base {
+  html {
+    font-size: 16px;
+  }
+}
+
+@layer components {
+  body {
+    @apply text-gray-700;
+  }
+  a {
+    @apply text-xl font-medium text-black transition duration-200 select-none active:no-underline hover:no-underline hover:text-white;
+  }
+  h1 {
+    @apply text-4xl font-black tracking-wider select-none md:text-8xl text-stone-700;
+  }
+  h2 {
+    @apply text-3xl font-bold tracking-wider text-center select-none md:text-6xl md:text-left text-stone-700;
+  }
+
+  h3 {
+    @apply text-2xl font-bold tracking-wider text-center select-none md:text-4xl text-stone-700;
+  }
+  body {
+    @apply select-text;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  }
 }
