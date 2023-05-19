@@ -104,7 +104,7 @@ const Navbar = (props) => {
                   exit = {{opacity: 0, y:150}} 
                   className='flex flex-row items-center justify-around ml-12 w-fit h-fit'
                 >
-                  <Button className="px-5 py-3 text-base text-primary bg-stone-800 hover:bg-stone-300 hover:text-black" onClick={() => router.push('/login') }>Iniciar Sesión</Button>
+                  <Button className="px-5 py-3 text-base !text-primary bg-stone-800 hover:bg-stone-300 hover:!text-black" onClick={() => router.push('/login') }>Iniciar Sesión</Button>
                 </motion.li>
             </motion.ol>
           }
@@ -122,22 +122,22 @@ const Navbar = (props) => {
                 </motion.li>
                 <motion.li className='mt-24 align-center' variants={item}>
                   <Link href="/services">
-                    <a className={`transition duration-300 hover:text-stone-300 text-lg font-helvetica text-white ${handleRouteActiveRes('/services')}`}>Servicios</a>
+                    <a className={`transition duration-300 hover:text-stone-300 text-sm md:text-lg font-helvetica text-white ${handleRouteActiveRes('/services')}`}>Servicios</a>
                   </Link>
                 </motion.li>
                 <motion.li className='mt-5' variants={item}>
                   <Link href="/about-us">
-                    <a className={`transition duration-300 hover:text-stone-300 text-lg font-helvetica text-white ${handleRouteActiveRes('/about-us')}`}>¿Quienes Somos?</a>
+                    <a className={`transition duration-300 hover:text-stone-300 text-sm md:text-lg font-helvetica text-white ${handleRouteActiveRes('/about-us')}`}>¿Quienes Somos?</a>
                   </Link>
                 </motion.li>
                 <motion.li className='mt-5' variants={item}>
                   <Link href="/study-plan">
-                    <a className={`transition duration-300 hover:text-stone-300 text-lg font-helvetica text-white ${handleRouteActiveRes('/study-plan')}`}>Plan de Estudios</a>
+                    <a className={`transition duration-300 hover:text-stone-300 text-sm md:text-lg font-helvetica text-white ${handleRouteActiveRes('/study-plan')}`}>Plan de Estudios</a>
                   </Link>
                 </motion.li>
                 <motion.li className='mt-5' variants={item}>
                   <Link href="/directory">
-                    <a className={`transition duration-300 hover:text-stone-300 text-lg font-helvetica text-white ${handleRouteActiveRes('/directory')}`}>Directorio</a>
+                    <a className={`transition duration-300 hover:text-stone-300 text-sm md:text-lg font-helvetica text-white ${handleRouteActiveRes('/directory')}`}>Directorio</a>
                   </Link>
                 </motion.li>
                 <motion.li 
@@ -145,10 +145,9 @@ const Navbar = (props) => {
                   initial = {{opacity:0, y:150}}
                   animate = {{opacity:1, y: 0}}
                   exit = {{opacity: 0, y:150}} 
-                  className='flex flex-col items-center justify-around w-9/12 mt-24'
+                  className='flex flex-col items-center justify-around mt-24 md:w-9/12'
                 >
-                  <Button className="!border-white !boder-1 text-sm " onClick={() => router.push('/session') }>Iniciar Sesión</Button>
-                  <Button className="mt-5 text-sm text-black bg-stone-300 hover:bg-stone-400">Registrarme</Button>
+                  <Button className="px-5 py-3 text-xs md:text-sm !text-primary bg-stone-800 hover:bg-stone-300 hover:!text-black" onClick={() => router.push('/session') }>Iniciar Sesión</Button>
                 </motion.li>
               </motion.ol>
 

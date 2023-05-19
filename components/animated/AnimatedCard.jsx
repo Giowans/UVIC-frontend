@@ -178,7 +178,7 @@ const AnimatedCard = ({ intialPhase, imgSource, title, description, uri }) => {
                 exit={{y:-10, opacity: 0}}
                 transition={{duration: 0.5, ease: 'easeInOut', delay: showDetails ? 1 : 0}}
               >
-                <Button onClick = {() => router.push('/servicios') } className="mt-8 text-xl text-stone-600 transition-all duration-200 w-52 bg-primary-dark hover:!bg-stone-700 hover:text-primary">
+                <Button onClick = {() => router.push('/servicios') } className="mt-8 !px-14 py-3 text-xl !text-stone-600 transition-all duration-200 w-52 bg-primary-dark hover:!bg-stone-700 hover:!text-primary">
                   Ver más
                 </Button>
               </motion.div>

@@ -2,36 +2,28 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Button from "../components/button/Button";
-import graduated from "../public/images/home/graduados.png";
 import AnimatedCard from "../components/animated/AnimatedCard";
+
+//Animation Values
+import { list } from "../utils/animation-values";
+
+// Imagenes
+import graduated from "../public/images/home/graduados.png";
 import prepa from "../public/images/home/carousel/preparatoria.png";
 import secu from "../public/images/home/carousel/secundaria.png";
 import uni from "../public/images/home/carousel/universidad.png";
+import left from "../public/images/home/izquierda.png";
+import right from "../public/images/home/derecha.png";
+import secretaria from "../public/images/home/secretaria.png";
 
 const Home = () => {
-  // States
-  const [replay, setReplay] = useState(false);
-
-  //Effects
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const timeout = setTimeout(() => {
-        setReplay((replay) => !replay);
-      }, 2500);
-
-      setReplay((replay) => !replay);
-      return () => clearTimeout(timeout);
-    }, 3200);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div className="grid grid-cols-12">
+      {/**Banner Inicial */}
       <div className="flex flex-col items-center justify-center w-full col-span-12 pt-24 lg:pt-0 lg:col-span-6 bg-primary md:h-[44rem]">
         <h1>TERMINA</h1>
         <h2>TUS ESTUDIOS</h2>
-        <Button className="mt-8 text-xl transition-all duration-200 w-52 bg-primary-dark hover:!bg-stone-700 hover:text-primary">
+        <Button className="mt-8 text-xl !px-20 !w-fit transition-all duration-200 w-52 bg-primary-dark hover:!bg-stone-700 hover:text-primary">
           Saber Más
         </Button>
       </div>
@@ -48,8 +40,10 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      {/**Sección Carrusel de Servicios */}
       <div className="flex flex-col col-span-12 py-28 px-14">
-        <div className="relative flex flex-row hidden lg:block h-[33rem]">
+        <div className="relative flex-row hidden lg:flex h-[33rem]">
           <AnimatedCard
             intialPhase={0}
             title={"Secundaria"}
@@ -187,6 +181,127 @@ const Home = () => {
               </Button>
             </motion.div>
           </div>
+        </div>
+      </div>
+
+      {/**Sección de la Secretaria */}
+      <div className="relative col-span-12 bg-stone-200 h-fit lg:h-[39rem]">
+        <motion.div className="absolute left-0 z-10 top-16">
+          <Image
+            width={150}
+            height={150}
+            src={right}
+            loading="eager"
+            placeholder="blur"
+            alt="right-pointer"
+          />
+        </motion.div>
+        <motion.div className="absolute right-0 z-10 bottom-16">
+          <Image
+            width={150}
+            height={150}
+            src={left}
+            loading="eager"
+            placeholder="blur"
+            alt="left-pointer"
+          />
+        </motion.div>
+
+        <div className="absolute z-20 grid grid-cols-12 gap-4 px-8 top-36">
+          <motion.div
+            className="hidden col-span-6 mt-8 lg:inline"
+            initial={{ x: -130, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+          >
+            <Image
+              width={889}
+              height={700}
+              src={secretaria}
+              placeholder="blur"
+              loading="eager"
+              alt="secretary"
+            />
+          </motion.div>
+          <motion.div
+            className="flex flex-col justify-start col-span-12 p-2 lg:col-span-6"
+            initial="hidden"
+            whileInView="visible"
+            variants={list}
+          >
+            <motion.h3
+              className="text-start"
+              variants={{
+                hidden: { y: -100, opacity: 0 },
+                visible: { y: 0, opacity: 1 },
+              }}
+              transition={{ duration: 1, ease: "easeInOut" }}
+            >
+              Termina tu{" "}
+              <font className="px-2 font-light bg-primary">Escuela</font>
+            </motion.h3>
+            <motion.h3
+              className="mt-3 font-light text-start"
+              variants={{
+                hidden: { x: -100, opacity: 0 },
+                visible: { x: 0, opacity: 1 },
+              }}
+              transition={{ duration: 1, ease: "easeInOut" }}
+            >
+              En Línea
+            </motion.h3>
+
+            <motion.div
+              className="mt-8 lg:hidden"
+              variants={{
+                hidden: { x: -100, opacity: 0 },
+                visible: { x: 0, opacity: 1 },
+              }}
+              transition={{ duration: 1, ease: "easeInOut" }}
+            >
+              <Image
+                width={889}
+                height={700}
+                src={secretaria}
+                placeholder="blur"
+                loading="eager"
+                alt="secretary"
+              />
+            </motion.div>
+
+            <motion.p
+              className="w-9/12 mt-8"
+              variants={{
+                hidden: { x: 100, opacity: 0 },
+                visible: { x: 0, opacity: 1 },
+              }}
+            >
+              Termina tus estudios con los mismos resultados que en clases
+              presenciales, desde la comodidad de tu hogar.
+            </motion.p>
+
+            <motion.p
+              className="w-9/12 mt-4"
+              variants={{
+                hidden: { x: 100, opacity: 0 },
+                visible: { x: 0, opacity: 1 },
+              }}
+            >
+              Hoy la tecnología nos ofrece una gran barra de herramientas para
+              poder continuar con tus clases sin tener que asistir a la escuela.
+            </motion.p>
+
+            <motion.div
+              variants={{
+                hidden: { y: 100, opacity: 0 },
+                visible: { y: 0, opacity: 1 },
+              }}
+            >
+              <Button className="mt-8 text-xl !px-6 !w-fit transition-all duration-200 w-52 bg-primary-dark hover:!bg-stone-700 hover:text-primary">
+                Más Información
+              </Button>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </div>

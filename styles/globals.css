@@ -35,11 +35,11 @@ a {
     @apply text-4xl font-black tracking-wider select-none md:text-8xl text-stone-700;
   }
   h2 {
-    @apply text-3xl font-bold tracking-wider text-center select-none md:text-6xl md:text-left text-stone-700;
+    @apply text-3xl font-bold text-center select-none md:text-6xl md:text-left text-stone-700;
   }
 
   h3 {
-    @apply text-2xl font-bold tracking-wider text-center select-none md:text-4xl text-stone-700;
+    @apply text-2xl font-bold text-center select-none md:text-4xl text-stone-700;
   }
   body {
     @apply select-text;
