@@ -304,6 +304,60 @@ const Home = () => {
           </motion.div>
         </div>
       </div>
+
+      {/**Sección de experiencias */}
+      <div className="relative mt-16 lg:mt-28 grid grid-cols-12 gap-4 col-span-12 bg-primary h-fit lg:h-[39rem]">
+        <div className="flex flex-col justify-center items-center col-span-12 lg:col-span-5">
+          <motion.div
+            className=" w-9/12 h-fit flex flex-col justify-center items-start lg:items-start col-span-12 p-2 lg:col-span-6"
+            initial="hidden"
+            whileInView="visible"
+            variants={list}
+          >
+            <motion.h3
+              className="text-start text-white"
+              variants={{
+                hidden: { y: -100, opacity: 0 },
+                visible: { y: 0, opacity: 1 },
+              }}
+              transition={{ duration: 1, ease: "easeInOut" }}
+            >
+              Historias y Experiencias
+            </motion.h3>
+            <motion.h3
+              className="mt-1 font-medium text-start"
+              variants={{
+                hidden: { x: -100, opacity: 0 },
+                visible: { x: 0, opacity: 1 },
+              }}
+              transition={{ duration: 1, ease: "easeInOut" }}
+            >
+              De Nuestros Alumnos
+            </motion.h3>
+            <motion.p
+              className="w-10/12 mt-6 text-lg"
+              variants={{
+                hidden: { x: 100, opacity: 0 },
+                visible: { x: 0, opacity: 1 },
+              }}
+            >
+              Conoce las historias y logros de nuestros estudiantes e impúlsate
+              para seguir superándote.
+            </motion.p>
+            <motion.div
+              variants={{
+                hidden: { y: 100, opacity: 0 },
+                visible: { y: 0, opacity: 1 },
+              }}
+            >
+              <Button className="mt-8 text-xl !px-6 !w-fit transition-all duration-200 w-52 bg-primary-dark hover:!bg-stone-700 hover:text-primary">
+                Más Información
+              </Button>
+            </motion.div>
+          </motion.div>
+        </div>
+        <div className="col-span-12 lg:col-span-7"></div>
+      </div>
     </div>
   );
 };

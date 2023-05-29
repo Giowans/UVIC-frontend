@@ -14,4 +14,19 @@ const list = {
   },
 };
 
-export { list };
+const animatedGrid = {
+  visible: {
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.4,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    transition: {
+      when: "afterChildren",
+    },
+  },
+};
+
+export { list, animatedGrid };
